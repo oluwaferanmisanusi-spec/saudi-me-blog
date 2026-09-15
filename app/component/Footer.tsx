@@ -30,12 +30,12 @@ export default function Footer() {
       </div>
       <div className=" flex justify-center max-lg:justify-start">
         <div className="max-w-[1400px]">
-          <div className="flex px-[8.125rem]  justify-center gap-[60px] pt-[1.8125rem] pb-[60px] max-xl:px-[5rem] max-lg:flex-col ">
+          <div className="flex px-[8.125rem]  justify-center gap-[60px] pt-[1.8125rem] pb-[60px] max-xl:px-[5rem] max-lg:flex-col max-sm:px-[2rem] ">
             <div className="flex flex-col content-center justify-center ">
               <p className="text-brand-secondary font-bold text[1.375rem] pb-2">
                 Stay informed!
               </p>
-              <p className="text-[#121212] font-bold text-3xl pb-[25px] max-lg:text-2xl">
+              <p className="text-[#121212] font-bold text-3xl pb-[25px] max-lg:text-2xl max-sm:text-xl">
                 Subscribe Now For Breaking News & Important e-Visa <br />{" "}
                 Updates.
               </p>
@@ -56,7 +56,7 @@ export default function Footer() {
 
       <div className=" flex justify-center">
         <div className="max-w-[1400px]">
-          <div className="flex gap-[2.7rem] px-[8.125rem] justify-center pb-[30px] max-xl:px-[5rem] max-lg:grid max-lg:grid-cols-2">
+          <div className="flex gap-[2.7rem] px-[8.125rem] justify-center pb-[30px] max-xl:px-[5rem] max-lg:grid max-lg:grid-cols-2 max-sm:px-[2rem]">
             <div className=" flex gap-[2.7rem] max-lg:flex-col  max-lg:gap-42 max-md:gap-45">
 <div className="flex flex-col gap-[2rem] ">
               <Image

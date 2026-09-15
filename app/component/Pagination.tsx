@@ -38,7 +38,7 @@ export default function Pagination({
           )}
           <Link
             href={hrefFor(p)}
-            className={`w-8 h-8 flex items-center justify-center rounded ${p === current ? "bg-[#5a9a5a] text-white" : "text-gray-700"}`}
+            className={`w-8 h-8 flex items-center justify-center rounded ${p === current ? "bg-[#5a9a5a] hover:bg-[#497c49] active:bg-[#497c49] text-white" : "text-gray-700"}`}
           >
             {p}
           </Link>

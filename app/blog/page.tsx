@@ -45,7 +45,7 @@ export default async function BlogPage({
 
   return (
     <div>
-      <div className="flex gap-8 max-w-6xl mx-auto py-12 px-[8.125rem] max-xl:px-[5rem] max-lg:flex-col">
+      <div className="flex gap-8 max-w-6xl mx-auto py-12 px-[8.125rem] max-xl:px-[5rem] max-lg:flex-col max-sm:px-[2rem]">
 <FilterPanel
   searchInput={
     <div className="bg-[#eef0fb] rounded-xl p-5 flex-1">

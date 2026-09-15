@@ -3,9 +3,9 @@
 import { useState } from "react";
 import Header from "./Header";
 import SideBar from "./SideBar";
-import Footer from "./Footer";
 
-export default function SiteShell({ children }: { children: React.ReactNode }) {
+
+export default function SiteShell({ children, footer }: { children: React.ReactNode; footer: React.ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function toggleMenu() {
@@ -13,8 +13,8 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <div className="relative">
-      <div className="overflow-hidden">
+    <div className="relative overflow-x-clip">
+      <div>
         <SideBar isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
       </div>
 
@@ -25,7 +25,7 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
       >
         <Header isMenuOpen={isMenuOpen} onMenuClick={toggleMenu} />
         <main>{children}</main>
-        <Footer />
+        {footer}
       </div>
     </div>
   );

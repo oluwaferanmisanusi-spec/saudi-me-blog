@@ -28,7 +28,7 @@ export default function LongFormPost({ post }: { post: any }) {
   });
 
   return (
-    <article className="max-w-6xl mx-auto py-12 px-[8.125rem] max-xl:px-[5rem]">
+    <article className="max-w-6xl mx-auto py-12 px-[8.125rem] max-xl:px-[5rem] max-sm:px-[2rem]">
       <p className="text-xs text-[#003300] font-semibold mb-2">
         {post.categories?.join(" • ").toUpperCase()}
       </p>

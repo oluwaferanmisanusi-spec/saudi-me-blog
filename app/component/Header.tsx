@@ -12,7 +12,7 @@ export default function Header({
   return (
     <header className=" py-[1.875rem]   px-[3.125rem] grid grid-cols-3">
       <div className="flex ">
-        <button onClick={onMenuClick} aria-label="Toggle menu">
+        <button onClick={onMenuClick} aria-label="Toggle menu"  className="px-2 rounded-full transition-colors duration-200 hover:bg-black/5 active:bg-black/10 active:scale-95">
           <Image src="/Link.svg" width={43} height={24.98} alt="menu bar" />
         </button>
       </div>
@@ -34,7 +34,7 @@ export default function Header({
             href="https://saudi.etavisaservices.ae/en/check-eligibility"
             target="_blank"
             rel="noopener noreferrer"
-            className=" bg-brand-secondary py-[0.75rem] px-[1.56rem] rounded-full text-[0.8125] text-brand-primary font-semibold max-lg:hidden"
+            className=" bg-brand-secondary py-[0.75rem] px-[1.56rem] rounded-full text-[0.8125] text-brand-primary font-semibold max-lg:hidden hover:bg-[#497c49] active:bg-[#497c49]"
           >
             Apply Now
           </a>

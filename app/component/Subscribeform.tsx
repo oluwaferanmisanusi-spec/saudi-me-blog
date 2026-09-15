@@ -33,18 +33,18 @@ export default function SubscribeForm() {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-2">
-      <div className="flex items-center bg-white rounded-[0.9375rem] overflow-hidden shadow-[0_0_24px_10px_rgba(53,70,233,0.07)] max-w-[600px]  h-[73px]">
+      <div className="flex items-center bg-white rounded-[0.9375rem] overflow-hidden shadow-[0_0_24px_10px_rgba(53,70,233,0.07)] max-w-[600px]  h-[73px] ">
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="your@email.com"
           required
-          className="flex-1 px-5 py-3 outline-none text-lg"
+          className="flex-1 px-5 py-3 outline-none text-lg max-sm:px-3"
         />
         <button
           type="submit"
-          className="bg-[#5a9a5a] text-white text-sm font-semibold px-6 py-3 rounded-full m-[18.23px]"
+          className="bg-[#5a9a5a] hover:bg-[#497c49] active:bg-[#497c49] text-white text-sm font-semibold px-6 py-3 rounded-full m-[18.23px] max-sm:px-4"
         >
           Subscribe
         </button>

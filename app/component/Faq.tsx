@@ -30,7 +30,7 @@ export default function FAQAccordion() {
   }
 
   return (
-    <div className=" max-w-[1400px] mx-auto px-[8.125rem] flex flex-col gap-4 max-xl:px-[5rem]">
+    <div className=" max-w-[1400px] mx-auto px-[8.125rem] flex flex-col gap-4 max-xl:px-[5rem] max-sm:px-[2rem]">
       {faqs.map((faq, index) => {
         const isOpen = openIndex === index;
 

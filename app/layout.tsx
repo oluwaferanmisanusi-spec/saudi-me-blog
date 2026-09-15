@@ -4,6 +4,7 @@ import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import SiteShell from "./component/SiteShell";
 import ScrollToTopButton from "./component/ScrollToTopButton";
+import Footer from "./component/Footer";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -18,8 +19,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={dmSans.variable}>
-      <body className="min-h-full flex flex-col min-w-fit">
-        <SiteShell>{children}</SiteShell>
+      <body className="min-h-full flex flex-col ">
+        <SiteShell footer={<Footer />}>{children}</SiteShell>
         <ScrollToTopButton />
       </body>
     </html>

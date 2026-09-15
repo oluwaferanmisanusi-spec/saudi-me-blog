@@ -21,7 +21,7 @@ export default async function LatestNews() {
   return (
     <section className="py-16 text-center">
       <h2 className="text-4xl font-bold mb-10">Latest News</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto px-[8.125rem] max-xl:px-[5rem]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto px-[8.125rem] max-xl:px-[5rem] max-sm:px-[2rem]">
         {posts.map((post: any) => (
           <Link
             key={post.slug}

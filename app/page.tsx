@@ -5,12 +5,12 @@ export default function Home() {
   return (
     <div>
       <div className="my-0 mx-auto flex justify-center">
-        <div className="flex   max-w-[1400px] pb-[40px] px-[8.125rem] max-xl:px-[5rem] max-lg:flex-col-reverse">
+        <div className="flex   max-w-[1400px] pb-[40px] px-[8.125rem] max-xl:px-[5rem] max-lg:flex-col-reverse max-sm:px-[2rem]">
           <div className="content-center ">
             <p className="text-brand-secondary text-lg font-bold pb-[0.625rem] max-lg:text-center">
               Saudi Arabia e-Visa
             </p>
-            <h1 className="text-5xl/[3.75rem] font-bold text-[#121212] pb-[2.5rem] max-xl:text-4xl max-lg:text-center">
+            <h1 className="text-5xl/[3.75rem] font-bold text-[#121212] pb-[2.5rem] max-xl:text-4xl max-lg:text-center max-sm:text-3xl">
               The Easiest Way To Get Your Saudi Arabia e-Visa
             </h1>
             <p className="text-[0.9375rem]/[1.556rem] font-normal text-[#121212] pb-[3.125rem] max-lg:text-center">
@@ -23,7 +23,7 @@ export default function Home() {
                 href="https://saudi.etavisaservices.ae/en/check-eligibility"
                 target="_blank"
                 rel="noopener noreferrer"
-                className=" bg-brand-secondary py-[0.75rem] px-[1.56rem] rounded-full text-[0.8125] font-bold text-brand-primary"
+                className=" bg-brand-secondary py-[0.75rem] px-[1.56rem] rounded-full text-[0.8125] font-bold text-brand-primary hover:bg-[#497c49] active:bg-[#497c49]"
               >
                 Apply Now
               </a>
@@ -31,7 +31,7 @@ export default function Home() {
                 href="https://saudi.etavisaservices.ae/en/check-eligibility"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-[1.25rem] content-center text-brand-secondary font-semibold text-[0.9375rem]"
+                className="px-[1.25rem] content-center text-brand-secondary font-semibold text-[0.9375rem] hover:text-[#497c49] active:text-[#497c49]"
               >
                 Check Eligibility
               </a>
@@ -43,7 +43,7 @@ export default function Home() {
             width={596}
             height={490.94}
             alt="passport image"
-            className="max-w-[37.25rem]"
+            className="max-w-[37.25rem] max-sm:w-[20rem]"
           />
           </div>
          
@@ -51,13 +51,13 @@ export default function Home() {
       </div>
       <div className="my-0 mx-auto">
         <div className="bg-[#66996636] flex justify-center ">
-          <div className="flex justify-center gap-[50px] py-[4.125rem]  mt-[2.6rem] px-[8.125rem] max-w-[1400px] max-xl:px-[5rem] max-lg:grid max-lg:grid-cols-3">
+          <div className="flex justify-center gap-[50px] py-[4.125rem]  mt-[2.6rem] px-[8.125rem] max-w-[1400px] max-xl:px-[5rem] max-lg:grid max-lg:grid-cols-3 max-sm:px-[2rem]">
             <div className="flex flex-col gap-[0.625rem] justify-end ">
               <div className="flex justify-center">
-                <Image src="/98.svg" width={83} height={56} alt="98%" />
+                <Image src="/98.svg" width={83} height={56} alt="98%" className="max-sm:w-[65px] max-sm:h-auto" />
               </div>
 
-              <p className="text-[#669966] font-medium text-base text-center">
+              <p className="text-[#669966] font-medium text-base text-center max-sm:text-sm">
                 Visa Approval rate
               </p>
             </div>
@@ -68,10 +68,11 @@ export default function Home() {
                   width={50}
                   height={56}
                   alt="Document icon"
+                  className="max-sm:h-[43px] max-sm:w-auto"
                 />
               </div>
 
-              <p className="text-[#669966] font-medium text-base text-center">
+              <p className="text-[#669966] font-medium text-base text-center max-sm:text-sm">
                 Same Day Processing
               </p>
             </div>
@@ -82,17 +83,18 @@ export default function Home() {
                   width={56}
                   height={56}
                   alt="Cash back icon"
+                  className="max-sm:w-[45px] max-sm:h-auto"
                 />
               </div>
-              <p className="text-[#669966] font-medium text-base text-center">
+              <p className="text-[#669966] font-medium text-base text-center max-sm:text-sm">
                 Money-Back Guarantee
               </p>
             </div>
             <div className="flex flex-col gap-[0.625rem] justify-end">
               <div className="flex justify-center">
-                <Image src="/7.svg" width={85} height={56} alt="24/7 icon" />
+                <Image src="/7.svg" width={85} height={56} alt="24/7 icon" className="max-sm:w-[64px] max-sm:h-auto" />
               </div>
-              <p className="text-[#669966] font-medium text-base text-center">
+              <p className="text-[#669966] font-medium text-base text-center max-sm:text-sm">
                 Customer Support
               </p>
             </div>
@@ -103,10 +105,12 @@ export default function Home() {
                   width={56}
                   height={56}
                   alt="Secure icon"
+                  className="max-sm:w-[45px] max-sm:h-auto"
+
                 />
               </div>
 
-              <p className="text-[#669966] font-medium text-base text-center">
+              <p className="text-[#669966] font-medium text-base text-center max-sm:text-sm">
                 Payment Security
               </p>
             </div>
@@ -117,9 +121,10 @@ export default function Home() {
                   width={56}
                   height={56}
                   alt="Padlock icon"
+                  className="max-sm:w-[45px] max-sm:h-auto"
                 />
               </div>
-              <p className="text-[#669966] font-medium text-base text-center">
+              <p className="text-[#669966] font-medium text-base text-center max-sm:text-sm">
                 {" "}
                 Privacy Protected
               </p>
@@ -129,7 +134,7 @@ export default function Home() {
       </div>
       <div className="my-0 mx-auto">
         <div className="flex justify-center">
-          <div className="pt-[5rem] flex gap-[100px] justify-center px-[8.125rem] pb-[3rem] max-w-[1400px] max-xl:gap-[70px] max-xl:px-[5rem] max-lg:flex-col">
+          <div className="pt-[5rem] flex gap-[100px] justify-center px-[8.125rem] pb-[3rem] max-w-[1400px] max-xl:gap-[70px] max-xl:px-[5rem] max-lg:flex-col max-sm:px-[2rem]">
             <div className="max-lg:flex max-lg:justify-center max-lg:flex-col max-md:hidden">
               <div className="max-lg:flex max-lg:justify-center">
               <Image
@@ -152,7 +157,7 @@ export default function Home() {
                 href="https://saudi.etavisaservices.ae/en/check-eligibility"
                 target="_blank"
                 rel="noopener noreferrer"
-                className=" bg-brand-secondary py-[0.75rem] px-[1.56rem] rounded-full text-[0.8125] font-bold text-brand-primary"
+                className=" bg-brand-secondary py-[0.75rem] px-[1.56rem] rounded-full text-[0.8125] font-bold text-brand-primary hover:bg-[#497c49] active:bg-[#497c49]"
               >
                 Apply Now
               </a>
@@ -233,18 +238,18 @@ export default function Home() {
             <h2 className="text-[2.375rem] font-bold text-center text-black pt-[3rem] max-xl:text-4xl">
               How it works
             </h2>
-            <p className="text-base text-center text-black font-normal pt-2">
+            <p className="text-base text-center text-black font-normal pt-2 max-sm:px-[2rem]">
               Applying for your Saudi visa is quick and simple with our easy
               3-step process
             </p>
-            <div className="flex justify-center gap-[6rem] py-12 px-[8.125rem] max-xl:px-[5rem]">
+            <div className="flex justify-center gap-[6rem] py-12 px-[8.125rem] max-xl:px-[5rem] max-sm:px-[2rem]">
               <div className="flex flex-col gap-8 ">
                 <div className="flex gap-6">
-                  <p className="font-bold text-brand-secondary bg-[#66996636] rounded-3xl w-[4.56rem] h-[4.56rem] flex items-center justify-center text-[2rem] max-xl:text-[28px]">
+                  <p className="font-bold text-brand-secondary bg-[#66996636] rounded-3xl w-[4.56rem] h-[4.56rem] flex items-center justify-center text-[2rem] max-xl:text-[28px] max-sm:text-[25px]">
                     01
                   </p>
                   <div className="flex flex-col gap-1">
-                    <p className="text-black font-medium text-[2rem] max-xl:text-3xl">
+                    <p className="text-black font-medium text-[2rem] max-xl:text-3xl max-sm:text-2xl">
                       Fill out online application
                     </p>
                     <p className="text-black font-normal text-base">
@@ -253,12 +258,12 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="flex gap-6">
-                  <p className="font-bold text-brand-secondary bg-[#66996636] rounded-3xl w-[4.56rem] h-[4.56rem] flex items-center justify-center text-[2rem] max-xl:text-[28px]">
+                <div className="flex gap-6 ">
+                  <p className="font-bold text-brand-secondary bg-[#66996636] rounded-3xl w-[4.56rem] h-[4.56rem] flex items-center justify-center text-[2rem] max-xl:text-[28px]  max-sm:text-[25px]">
                     02
                   </p>
                   <div className="flex flex-col gap-1">
-                    <p className="text-black font-medium text-[2rem] max-xl:text-3xl">
+                    <p className="text-black font-medium text-[2rem] max-xl:text-3xl max-sm:text-2xl">
                       Upload your documents
                     </p>
                     <p className="text-black font-normal text-base">
@@ -268,11 +273,11 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex gap-6">
-                  <p className="font-bold text-brand-secondary bg-[#66996636] rounded-3xl w-[4.56rem] h-[4.56rem] flex items-center justify-center text-[2rem] max-xl:text-[28px]">
+                  <p className="font-bold text-brand-secondary bg-[#66996636] rounded-3xl w-[4.56rem] h-[4.56rem] flex items-center justify-center text-[2rem] max-xl:text-[28px]  max-sm:text-[25px]">
                     03
                   </p>
-                  <div className="flex flex-col gap-1">
-                    <p className="text-black font-medium text-[2rem] max-xl:text-3xl">
+                  <div className="flex flex-col gap-1"> 
+                    <p className="text-black font-medium text-[2rem] max-xl:text-3xl max-sm:text-2xl">
                       Get your visa delivered.
                     </p>
                     <p className="text-black font-normal text-base">
@@ -285,7 +290,7 @@ export default function Home() {
                     href="https://saudi.etavisaservices.ae/en/check-eligibility"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className=" bg-brand-secondary py-[0.75rem] px-[1.56rem] rounded-full text-[0.8125] font-bold text-brand-primary"
+                    className=" bg-brand-secondary py-[0.75rem] px-[1.56rem] rounded-full text-[0.8125] font-bold text-brand-primary hover:bg-[#497c49] active:bg-[#497c49]"
                   >
                     Apply Now
                   </a>
@@ -309,10 +314,10 @@ export default function Home() {
             <h2 className="text-[2.375rem] font-bold text-center text-black pt-12 max-xl:text-4xl">
               Customer Reviews
             </h2>
-            <p className="text-base text-center text-black font-normal pt-2">
+            <p className="text-base text-center text-black font-normal pt-2 max-sm:px-[2rem]">
               See why travelers trust us for their Saudi visa needs
             </p>
-            <div className="flex gap-[50px] justify-center py-12 px-[12rem] max-xl:px-[9rem] max-lg:flex-col">
+            <div className="flex gap-[50px] justify-center py-12 px-[12rem] max-xl:px-[9rem] max-lg:flex-col max-sm:px-[4rem]">
               <div className="flex flex-col gap-2 ">
                 <p className="font-medium text-[#003300] text-lg pb-2">
                   Esther Howard

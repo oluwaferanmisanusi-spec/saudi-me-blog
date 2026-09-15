@@ -5,7 +5,7 @@ export default function AboutPage() {
         <h2 className="font-bold text-5xl text-[#121212] max-xl:text-4xl">About</h2>
       </div>
       <div className="flex justify-center content-center border-b-2 border-[#dedede]">
-        <div className="px-[8.125rem] py-[45px]  max-w-[1400px]  max-xl:px-[5rem]">
+        <div className="px-[8.125rem] py-[45px]  max-w-[1400px]  max-xl:px-[5rem] max-sm:px-[2rem]">
           <p className="font-normal text-sm/[1.66] mb-5">
             What is Lorem Ipsum?
           </p>
