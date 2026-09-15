@@ -10,7 +10,7 @@ export default function Header({
   onMenuClick: () => void;
 }) {
   return (
-    <header className=" py-[1.875rem]   px-[3.125rem] grid grid-cols-3">
+    <header className=" py-[1.875rem]   px-[3.125rem] grid grid-cols-3 max-sm:px-[2rem]">
       <div className="flex ">
         <button onClick={onMenuClick} aria-label="Toggle menu"  className="px-2 rounded-full transition-colors duration-200 hover:bg-black/5 active:bg-black/10 active:scale-95">
           <Image src="/Link.svg" width={43} height={24.98} alt="menu bar" />
