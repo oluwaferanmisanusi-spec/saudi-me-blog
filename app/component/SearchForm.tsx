@@ -4,14 +4,20 @@ import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-export default function SearchForm() {
-  const [isOpen, SetIsOpen] = useState(false);
+export default function SearchForm({
+  isOpen,
+  setIsOpen,
+}: {
+  isOpen: boolean;
+  setIsOpen: (open: boolean) => void;
+}) {
+  
   const [query, setQuery] = useState("");
   const router = useRouter();
 
   function handleIconClick() {
     if (!isOpen) {
-      SetIsOpen(true);
+      setIsOpen(true);
       return;
     }
     runSearch();
@@ -26,7 +32,7 @@ export default function SearchForm() {
     if (query.trim() === "") return;
     router.push(`/blog?q=${encodeURIComponent(query)}`);
     setQuery("");
-    SetIsOpen(false);
+    setIsOpen(false);
   }
 
   return (

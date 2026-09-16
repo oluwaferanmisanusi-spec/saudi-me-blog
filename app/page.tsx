@@ -245,7 +245,7 @@ export default function Home() {
             <div className="flex justify-center gap-[6rem] py-12 px-[8.125rem] max-xl:px-[5rem] max-sm:px-[2rem]">
               <div className="flex flex-col gap-8 ">
                 <div className="flex gap-6">
-                  <p className="font-bold text-brand-secondary bg-[#66996636] rounded-3xl w-[4.56rem] h-[4.56rem] flex items-center justify-center text-[2rem] max-xl:text-[28px] max-sm:text-[25px]">
+                  <p className="font-bold text-brand-secondary bg-[#66996636] rounded-3xl w-[4.56rem] h-[4.56rem] flex-shrink-0 flex items-center justify-center text-[2rem] max-xl:text-[28px] max-sm:text-[25px]">
                     01
                   </p>
                   <div className="flex flex-col gap-1">
@@ -259,7 +259,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex gap-6 ">
-                  <p className="font-bold text-brand-secondary bg-[#66996636] rounded-3xl w-[4.56rem] h-[4.56rem] flex items-center justify-center text-[2rem] max-xl:text-[28px]  max-sm:text-[25px]">
+                  <p className="font-bold text-brand-secondary bg-[#66996636] rounded-3xl w-[4.56rem] h-[4.56rem] flex-shrink-0 flex items-center justify-center text-[2rem] max-xl:text-[28px]  max-sm:text-[25px]">
                     02
                   </p>
                   <div className="flex flex-col gap-1">
@@ -273,7 +273,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex gap-6">
-                  <p className="font-bold text-brand-secondary bg-[#66996636] rounded-3xl w-[4.56rem] h-[4.56rem] flex items-center justify-center text-[2rem] max-xl:text-[28px]  max-sm:text-[25px]">
+                  <p className="font-bold text-brand-secondary bg-[#66996636] rounded-3xl w-[4.56rem] h-[4.56rem] flex-shrink-0 flex items-center justify-center text-[2rem] max-xl:text-[28px]  max-sm:text-[25px]">
                     03
                   </p>
                   <div className="flex flex-col gap-1"> 
@@ -392,7 +392,7 @@ export default function Home() {
       <div className="my-0 mx-auto">
         <div className=" flex justify-center">
           <div className=" max-w-[1400px] ">
-            <h2 className="text-[2.375rem] font-bold text-center text-black pt-12 pb-6 max-xl:text-4xl">
+            <h2 className="text-[2.375rem] font-bold text-center text-black pt-12 pb-6 max-xl:text-4xl max-sm:px-[2rem]">
               Frequently Asked Questions
             </h2>
           </div>
