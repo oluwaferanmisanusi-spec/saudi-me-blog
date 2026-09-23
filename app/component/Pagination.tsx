@@ -28,7 +28,7 @@ export default function Pagination({
 
   return (
     <div className="flex items-center gap-2 justify-center mt-10">
-      <Link href={hrefFor(Math.max(1, current - 1))} className="px-2">
+      <Link href={hrefFor(Math.max(1, current - 1))} className="px-2 hover:text-brand-secondary text-2xl active:text-brand-secondary">
         ‹
       </Link>
       {sorted.map((p, i) => (
@@ -44,7 +44,7 @@ export default function Pagination({
           </Link>
         </span>
       ))}
-      <Link href={hrefFor(Math.min(total, current + 1))} className="px-2">
+      <Link href={hrefFor(Math.min(total, current + 1))} className="px-2 hover:text-brand-secondary text-2xl active:text-brand-secondary">
         ›
       </Link>
     </div>

@@ -13,7 +13,7 @@ export default function FilterPanel({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="w-full lg:w-72 flex-shrink-0">
+    <div className="w-full lg:w-72 flex-shrink-0 lg:sticky lg:top-24 lg:self-start">
       {/* Toggle bar — mobile/tablet only */}
       <button
         onClick={() => setIsOpen((prev) => !prev)}
