@@ -7,3 +7,5 @@ export const client = createClient({
   apiVersion: "2026-04-01",
   useCdn: true, // faster reads, fine for public blog content
 });
+
+

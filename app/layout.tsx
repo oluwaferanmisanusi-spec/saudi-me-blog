@@ -12,8 +12,11 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Saudi Arabia e-Visa",
-  description: "The Easiest Way To Get Your Saudi Arabia e-Visa",
+  title: {
+    default: "Saudi Arabia e-Visa",
+    template: "%s | Saudi Arabia e-Visa", // child pages can just set a short title, this appends the site name
+  },
+  description: "The easiest way to get your Saudi Arabia e-Visa",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

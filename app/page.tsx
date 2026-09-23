@@ -1,5 +1,13 @@
 import Image from "next/image";
 import FAQAccordion from "./component/Faq";
+import type { Metadata } from "next";
+
+
+
+export const metadata: Metadata = {
+  title: "Home",
+  description: "The easiest way to get your Saudi Arabia e-Visa.",
+};
 
 export default function Home() {
   return (
@@ -50,8 +58,8 @@ export default function Home() {
         </div>
       </div>
       <div className="my-0 mx-auto">
-        <div className="bg-[#66996636] flex justify-center ">
-          <div className="flex justify-center gap-[50px] py-[4.125rem]  mt-[2.6rem] px-[8.125rem] max-w-[1400px] max-xl:px-[5rem] max-lg:grid max-lg:grid-cols-3 max-sm:px-[2rem]">
+        <div className="bg-[#66996636] flex justify-center mt-[2.6rem] ">
+          <div className="flex justify-center gap-[50px] py-[4.125rem]   px-[8.125rem] max-w-[1400px] max-xl:px-[5rem] max-lg:grid max-lg:grid-cols-3 max-sm:px-[2rem]">
             <div className="flex flex-col gap-[0.625rem] justify-end ">
               <div className="flex justify-center">
                 <Image src="/98.svg" width={83} height={56} alt="98%" className="max-sm:w-[65px] max-sm:h-auto" />

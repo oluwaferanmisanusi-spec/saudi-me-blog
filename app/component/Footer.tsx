@@ -36,8 +36,7 @@ export default function Footer() {
                 Stay informed!
               </p>
               <p className="text-[#121212] font-bold text-3xl pb-[25px] max-lg:text-2xl max-sm:text-xl">
-                Subscribe Now For Breaking News & Important e-Visa <br />{" "}
-                Updates.
+                Subscribe Now For Breaking News & Important e-Visa Updates.
               </p>
               <SubscribeForm />
             </div>

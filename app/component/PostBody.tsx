@@ -1,6 +1,7 @@
 // app/component/PostBody.tsx
 import Image from "next/image";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
+import { getHeadingText } from "../lib/getHeadingText";
 
 function slugify(text: string) {
   return text
@@ -15,14 +16,17 @@ export const postBodyComponents: PortableTextComponents = {
     normal: ({ children }) => (
       <p className="text-gray-700 leading-relaxed mb-4">{children}</p>
     ),
-    h2: ({ children }) => (
-      <h2
-        id={slugify(String(children))}
-        className="text-2xl/[32px] font-bold text-[#003300] mt-[48px] mb-4 capitalize"
-      >
-        {children}
-      </h2>
-    ),
+    h2: ({ children, value }) => {
+   const text = getHeadingText(value.children);
+  return (
+    <h2
+      id={slugify(text)}
+      className="text-2xl/[32px] font-bold text-[#003300] mt-[48px] mb-4 capitalize"
+    >
+      {children}
+    </h2>
+  );
+},
     blockquote: ({ children }) => (
       <blockquote className="border-l-4 border-[#5a9a5a] bg-gray-50 italic text-gray-700 px-5 py-4 my-6 rounded-xl">
         {children}

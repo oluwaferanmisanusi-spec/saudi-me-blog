@@ -17,8 +17,8 @@ export default function Header({
 
   return (
     <header className=" py-[1.875rem]   px-[3.125rem] grid grid-cols-3 max-sm:px-[2rem]">
-      <div className="flex ">
-        <button onClick={onMenuClick} aria-label="Toggle menu"  className="px-2 rounded-full transition-colors duration-200 hover:bg-black/5 active:bg-black/10 active:scale-95">
+      <div className="content-center">
+        <button onClick={onMenuClick} aria-label="Toggle menu"  className="p-4 rounded-full transition-colors duration-200 hover:bg-black/5 active:bg-black/10 active:scale-95 cursor-pointer ">
           <Image src="/Link.svg" width={43} height={24.98} alt="menu bar" className="max-sm:w-[38px] max-sm:h-auto" />
         </button>
       </div>
@@ -33,8 +33,11 @@ export default function Header({
         </Link>
       </div>
 
-      <div className="flex gap-[1.56rem] justify-end max-sm:hidden">
-       <SearchForm isOpen={isSearchOpen} setIsOpen={setIsSearchOpen} />
+      <div className="flex gap-[1.56rem] justify-end max-sm:hidden ">
+        <div className="content-center">
+           <SearchForm isOpen={isSearchOpen} setIsOpen={setIsSearchOpen} />
+        </div>
+      
         <div  className={`content-center transition-all duration-300 ease-in-out ${
       isSearchOpen ? "w-0 opacity-0 overflow-hidden" : "w-auto opacity-100"
     }`}>

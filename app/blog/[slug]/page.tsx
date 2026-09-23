@@ -1,9 +1,34 @@
 // app/blog/[slug]/page.tsx
-import { client } from "../../lib/sanity/client";
-import { postBySlugQuery } from "../../lib/sanity/queries";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import LongFormPost from "../../component/LongFormPost";
 import ShortFormPost from "../../component/ShortFormPost";
+import { getPostBySlug } from "../../lib/sanity/queries";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug); // ← was client.fetch(postBySlugQuery, { slug })
+
+  if (!post) return { title: "Post not found" };
+
+  const title = post.seo?.metaTitle || post.title;
+  const description = post.seo?.metaDescription || post.subtitle || "";
+  const image = post.seo?.shareImage || post.image;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: image ? [{ url: image }] : [],
+    },
+  };
+}
 
 export default async function PostPage({
   params,
@@ -11,7 +36,7 @@ export default async function PostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = await client.fetch(postBySlugQuery, { slug });
+  const post = await getPostBySlug(slug);
 
   if (!post) notFound();
 

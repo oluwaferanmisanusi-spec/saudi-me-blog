@@ -1,4 +1,12 @@
 import ContactForm from "../component/ContactForm";
+import type { Metadata } from "next";
+
+
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description: "Get in touch with our team for help with your visa application.",
+};
 
 export default function ContactPage() {
   return (
@@ -16,7 +24,7 @@ export default function ContactPage() {
         </div>
       </div>
 
-      <div className="py-[45px] px-[8.125rem] mx-w-[1400px] max-xl:px-[5rem] max-sm:px-[2rem]">
+      <div className="py-[45px] px-[8.125rem] mx-w-[1400px] max-xl:px-[5rem] max-sm:px-0">
         <ContactForm />
       </div>
     </div>
