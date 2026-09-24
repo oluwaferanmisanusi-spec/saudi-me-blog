@@ -1,6 +1,6 @@
 export default function ArticleLoading() {
   return (
-    <div className="max-w-6xl mx-auto py-12 animate-pulse px-[8.125rem] max-xl:px-[5rem] max-sm:px-[2rem]">
+    <div className="max-w-[1400px] mx-auto py-12 animate-pulse px-[8.125rem] max-xl:px-[5rem] max-sm:px-[2rem]">
       <div className="h-3 w-32 bg-gray-200 rounded mb-3" />
       <div className="h-8 w-3/4 bg-gray-200 rounded mb-3" />
       <div className="h-4 w-1/2 bg-gray-200 rounded mb-10" />

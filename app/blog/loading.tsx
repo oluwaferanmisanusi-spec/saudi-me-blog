@@ -1,7 +1,7 @@
 // app/blog/loading.tsx
 export default function BlogLoading() {
   return (
-    <div className="flex gap-8 max-w-6xl mx-auto py-12 animate-pulse px-[8.125rem] max-xl:px-[5rem] max-sm:px-[2rem]">
+    <div className="flex gap-8 max-w-[1400px] mx-auto py-12 animate-pulse px-[8.125rem] max-xl:px-[5rem] max-sm:px-[2rem]">
       <aside className="w-64 flex-shrink-0 max-md:hidden">
         <div className="h-4 w-32 bg-gray-200 rounded mb-2" />
         <div className="h-10 w-full bg-gray-200 rounded mb-6" />
