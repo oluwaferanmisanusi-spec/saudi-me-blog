@@ -45,7 +45,7 @@ const totalCount = await client.fetch(allPostsCountQuery, {
 
   return (
     <SearchProvider>
-      <div className="flex gap-8 max-w-6xl mx-auto py-12 px-[8.125rem] max-xl:px-[5rem] max-lg:flex-col max-sm:px-[2rem]">
+      <div className="flex gap-8 max-w-[1400px] mx-auto py-12 px-[8.125rem] max-xl:px-[5rem] max-lg:flex-col max-sm:px-[2rem]">
         <FilterPanel
           searchInput={<SearchInput initialQuery={q ?? ""} />}
           topicFilter={<TopicFilter />}
