@@ -100,7 +100,7 @@ export default function SearchForm({
       <button
         type="button"
         onClick={handleIconClick}
-        className="py-3 px-2  cursor-pointer hover:bg-black/5 active:bg-black/10"
+        className="py-3 px-2  cursor-pointer hover:bg-black/5 active:bg-black/10 hover:rounded-full"
         aria-label="Search"
       >
         <Image src="/Button.svg" width={36} height={24} alt="search icon" />
