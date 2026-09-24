@@ -1,6 +1,6 @@
 "use client";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useSearchContext } from "./SearchContext";
 
 const topics = [
@@ -16,18 +16,22 @@ export default function TopicFilter() {
 
   const urlSelected = searchParams.get("category")?.split(",").filter(Boolean) || [];
   const [selected, setSelected] = useState(urlSelected);
+  const selectedRef = useRef(selected); // always holds the latest selection, synchronously
 
   useEffect(() => {
     setSelected(urlSelected);
+    selectedRef.current = urlSelected;
   }, [searchParams.toString()]);
 
   function toggleTopic(topic: string) {
-    const updated = selected.includes(topic)
-      ? selected.filter((t) => t !== topic)
-      : [...selected, topic];
+    const current = selectedRef.current; // read from ref, not stale closures
+    const updated = current.includes(topic)
+      ? current.filter((t) => t !== topic)
+      : [...current, topic];
 
-    setSelected(updated);       // ticks immediately, no API wait
-    setIsSearching(true);       // skeleton shows immediately
+    selectedRef.current = updated; // update ref immediately, before navigation even starts
+    setSelected(updated);          // ticks immediately, no API wait
+    setIsSearching(true);          // skeleton shows immediately
 
     const params = new URLSearchParams(searchParams.toString());
     updated.length > 0 ? params.set("category", updated.join(",")) : params.delete("category");

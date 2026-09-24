@@ -3,10 +3,11 @@ import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 import PostBody, { postBodyComponents } from "./PostBody";
 import AuthorBox from "./AuthorBox";
+import { urlFor } from "../lib/sanity/image";
 
 export default function ShortFormPost({ post }: { post: any }) {
   return (
-    <article className="max-w-3xl mx-auto py-12 px-[8.125rem] max-xl:px-[5rem] max-sm:px-[2rem]">
+    <article className="max-w-[1400px] mx-auto py-12 px-[8.125rem] max-xl:px-[5rem] max-sm:px-[2rem]">
       <p className="text-xs text-[#003300] font-semibold mb-2">
         {post.categories?.join(" • ").toUpperCase()}
       </p>
@@ -21,14 +22,19 @@ export default function ShortFormPost({ post }: { post: any }) {
           year: "numeric",
         })}
       </p>
-      <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden mb-6">
-        <Image
-          src={post.image}
-          alt={post.title}
-          fill
-          className="object-cover"
-        />
-      </div>
+<div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden mb-6">
+  {post.image ? (
+    <Image
+      src={urlFor(post.image).width(768).height(432).fit("crop").auto("format").url()}
+      alt={post.title}
+      fill
+      sizes="(max-width: 768px) 100vw, 768px"
+      className="object-cover"
+    />
+  ) : (
+    <div className="w-full h-full bg-gray-200" />
+  )}
+</div>
       <div className="prose max-w-none">
         <PostBody body={post.body} />
       </div>

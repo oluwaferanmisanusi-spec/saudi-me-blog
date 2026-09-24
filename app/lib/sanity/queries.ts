@@ -28,7 +28,7 @@ export const allPostsQuery = groq`
   [$start...$end] {
     title,
     "slug": slug.current,
-    "image": mainImage.asset->url,
+    "image": mainImage,
     "categories": categories[]->title,
     publishedAt,
     "excerpt": bodyText,
@@ -54,10 +54,10 @@ export const allPostsCountQuery = groq`
 
 export const postBySlugQuery = groq`
   *[_type == "post" && slug.current == $slug][0] {
-    title, subtitle, "slug": slug.current, "image": mainImage.asset->url,
+    title, subtitle, "slug": slug.current, "image": mainImage,
     "categories": categories[]->title, postType, publishedAt,
     body[]{ ..., _type == "image" => { ..., "asset": asset-> } },
-    "author": author->{ name, role, "image": image.asset->url },
+    "author": author->{ name, role, "image": image },
     seo {
       metaTitle,
       metaDescription,
@@ -71,7 +71,7 @@ export const latestNewsQuery = groq`
   *[_type == "post"] | order(publishedAt desc) [0...4] {
     title,
     "slug": slug.current,
-    "image": mainImage.asset->url,
+    "image": mainImage,
 "categories": categories[]->title,
     publishedAt
   }

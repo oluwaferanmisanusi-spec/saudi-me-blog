@@ -4,6 +4,7 @@ import { client } from "../lib/sanity/client";
 import { latestNewsQuery } from "../lib/sanity/queries";
 import Image from "next/image";
 import Link from "next/link";
+import { urlFor } from "../lib/sanity/image";
 
 export const revalidate = 60; // re-check Sanity every 60s for new posts
 
@@ -29,12 +30,13 @@ export default async function LatestNews() {
             className="text-left"
           >
             <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden">
-              <Image
-                src={post.image}
-                alt={post.title}
-                fill
-                className="object-cover"
-              />
+                <Image
+    src={urlFor(post.image).width(400).height(300).fit("crop").auto("format").url()}
+    alt={post.title}
+    fill
+    sizes="(max-width: 768px) 100vw, 400px"
+    className="object-cover"
+  />
             </div>
             <p className="text-xs text-gray-500 font-semibold mt-3">
               ● {post.category?.toUpperCase()}

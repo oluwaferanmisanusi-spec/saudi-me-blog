@@ -7,6 +7,7 @@ import Image from "next/image";
 import { client } from "../lib/sanity/client";
 import { allPostsQuery } from "../lib/sanity/queries";
 import { truncate } from "../lib/truncate";
+import { urlFor } from "../lib/sanity/image";
 
 const PAGE_SIZE = 10;
 
@@ -46,7 +47,13 @@ const posts = await client.fetch(allPostsQuery, {
             className={`flex gap-6 py-8 max-md:flex-col ${i !== 0 ? "border-t border-gray-200" : ""}`}
           >
             <div className="relative w-64 h-40 flex-shrink-0 rounded-lg overflow-hidden max-md:w-full max-md:h-60">
-              <Image src={post.image} alt={post.title} fill className="object-cover" />
+              <Image
+    src={urlFor(post.image).width(256).height(160).fit("crop").auto("format").url()}
+    alt={post.title}
+    fill
+    sizes="(max-width: 768px) 100vw, 256px"
+    className="object-cover"
+  />
             </div>
                                     <div>
                               <p className="text-xs text-gray-500 font-semibold">

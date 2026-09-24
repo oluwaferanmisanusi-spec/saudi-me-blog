@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import LongFormPost from "../../component/LongFormPost";
 import ShortFormPost from "../../component/ShortFormPost";
 import { getPostBySlug } from "../../lib/sanity/queries";
+import { urlFor } from "../../lib/sanity/image";
 
 export async function generateMetadata({
   params,
@@ -17,7 +18,7 @@ export async function generateMetadata({
 
   const title = post.seo?.metaTitle || post.title;
   const description = post.seo?.metaDescription || post.subtitle || "";
-  const image = post.seo?.shareImage || post.image;
+  const image = post.seo?.shareImage || (post.image ? urlFor(post.image).width(1200).height(630).url() : null);
 
   return {
     title,

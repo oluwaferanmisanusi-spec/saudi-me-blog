@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
 import { getHeadingText } from "../lib/getHeadingText";
+import { urlFor } from "../lib/sanity/image";
 
 function slugify(text: string) {
   return text
@@ -21,7 +22,7 @@ export const postBodyComponents: PortableTextComponents = {
   return (
     <h2
       id={slugify(text)}
-      className="text-2xl/[32px] font-bold text-[#003300] mt-[48px] mb-4 capitalize"
+      className="text-2xl/[32px] font-bold text-[#003300] pt-[48px] pb-4 capitalize"
     >
       {children}
     </h2>
@@ -70,12 +71,13 @@ export const postBodyComponents: PortableTextComponents = {
       if (!value?.asset?.url) return null;
       return (
         <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden my-8">
-          <Image
-            src={value.asset.url}
-            alt={value.alt || ""}
-            fill
-            className="object-cover"
-          />
+      <Image
+        src={urlFor(value).width(1200).height(675).fit("max").auto("format").url()}
+        alt={value.alt || ""}
+        fill
+        sizes="(max-width: 768px) 100vw, 768px"
+        className="object-cover"
+      />
         </div>
       );
     },

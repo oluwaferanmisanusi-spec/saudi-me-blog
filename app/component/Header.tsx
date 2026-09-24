@@ -16,7 +16,7 @@ export default function Header({
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   return (
-    <header className=" py-[1.875rem]   px-[3.125rem] grid grid-cols-3 max-sm:px-[2rem]">
+    <header className=" py-[1.875rem]   px-[3.125rem] grid grid-cols-3 max-sm:pr-8 max-sm:pl-4">
       <div className="content-center">
         <button onClick={onMenuClick} aria-label="Toggle menu"  className="p-4 rounded-full transition-colors duration-200 hover:bg-black/5 active:bg-black/10 active:scale-95 cursor-pointer ">
           <Image src="/Link.svg" width={43} height={24.98} alt="menu bar" className="max-sm:w-[38px] max-sm:h-auto" />
@@ -38,7 +38,7 @@ export default function Header({
            <SearchForm isOpen={isSearchOpen} setIsOpen={setIsSearchOpen} />
         </div>
       
-        <div  className={`content-center transition-all duration-300 ease-in-out ${
+        <div  className={`content-center transition-all duration-500 ease-in-out ${
       isSearchOpen ? "w-0 opacity-0 overflow-hidden" : "w-auto opacity-100"
     }`}>
           <a
