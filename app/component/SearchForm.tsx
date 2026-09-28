@@ -89,7 +89,7 @@ export default function SearchForm({
 <button
   type="button"
   onClick={handleClearClick}
-  className={`p-1 cursor-pointer text-gray-400 hover:text-gray-600 transition-opacity duration-150 ${
+  className={`p-1 cursor-pointer text-gray-500 hover:bg-black/5 active:bg-black/10 hover:rounded-full  w-[30px] h-[30px] transition-opacity duration-150 ${
     query.length > 0 ? "opacity-100" : "opacity-0 pointer-events-none"
   }`}
   aria-label="Clear search"
@@ -97,10 +97,12 @@ export default function SearchForm({
   ✕
 </button>
 
+
+
       <button
         type="button"
         onClick={handleIconClick}
-        className="py-3 px-2  cursor-pointer hover:bg-black/5 active:bg-black/10 hover:rounded-full"
+        className="py-2 px-2  cursor-pointer hover:bg-black/5 active:bg-black/10 hover:rounded-full"
         aria-label="Search"
       >
         <Image src="/Button.svg" width={36} height={24} alt="search icon" />

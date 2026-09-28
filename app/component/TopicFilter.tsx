@@ -8,35 +8,73 @@ const topics = [
   "Friends & Family", "Transit Visa", "Umrah Visa", "Hajj Visa",
 ];
 
+const parse = (v: string) => v.split(",").filter(Boolean);
+
 export default function TopicFilter() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const { setIsSearching } = useSearchContext();
 
-  const urlSelected = searchParams.get("category")?.split(",").filter(Boolean) || [];
-  const [selected, setSelected] = useState(urlSelected);
-  const selectedRef = useRef(selected); // always holds the latest selection, synchronously
+  const urlKey = searchParams.get("category") ?? "";
 
+  // the checkboxes own their state; the URL never overwrites it mid-click
+  const [selected, setSelected] = useState<string[]>(parse(urlKey));
+
+  const appliedKey = useRef(urlKey);           // last category string we know the URL has/will have
+  const pushedKeys = useRef<Set<string>>(new Set()); // URLs we pushed that may still be arriving
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const mounted = useRef(false);
+
+  // Sync FROM the URL only when the change came from outside (back button, etc.)
   useEffect(() => {
-    setSelected(urlSelected);
-    selectedRef.current = urlSelected;
-  }, [searchParams.toString()]);
+    if (pushedKeys.current.has(urlKey)) {
+      // our own navigation arriving: ignore it, so it can't undo newer clicks
+      if (urlKey === appliedKey.current) pushedKeys.current.clear(); // fully settled
+      return;
+    }
+    appliedKey.current = urlKey;
+    pushedKeys.current.clear();
+    setSelected(parse(urlKey));
+  }, [urlKey]);
+
+  // Sync TO the URL whenever the selection changes (debounced)
+  useEffect(() => {
+    if (!mounted.current) {
+      mounted.current = true;
+      return;
+    }
+
+    const key = selected.join(",");
+    if (timer.current) clearTimeout(timer.current);
+
+    if (key === appliedKey.current) {
+      // user ended up back where the URL already is: nothing to search
+      if (pushedKeys.current.size === 0) setIsSearching(false);
+      return;
+    }
+
+    setIsSearching(true); // skeleton shows immediately
+
+    timer.current = setTimeout(() => {
+      const params = new URLSearchParams(searchParams.toString());
+      key ? params.set("category", key) : params.delete("category");
+      params.delete("page");
+
+      appliedKey.current = key;
+      pushedKeys.current.add(key);
+      router.push(`${pathname}?${params.toString()}`);
+    }, 300);
+
+    return () => {
+      if (timer.current) clearTimeout(timer.current);
+    };
+  }, [selected]);
 
   function toggleTopic(topic: string) {
-    const current = selectedRef.current; // read from ref, not stale closures
-    const updated = current.includes(topic)
-      ? current.filter((t) => t !== topic)
-      : [...current, topic];
-
-    selectedRef.current = updated; // update ref immediately, before navigation even starts
-    setSelected(updated);          // ticks immediately, no API wait
-    setIsSearching(true);          // skeleton shows immediately
-
-    const params = new URLSearchParams(searchParams.toString());
-    updated.length > 0 ? params.set("category", updated.join(",")) : params.delete("category");
-    params.delete("page");
-    router.push(`${pathname}?${params.toString()}`);
+    setSelected((prev) =>
+      prev.includes(topic) ? prev.filter((t) => t !== topic) : [...prev, topic]
+    );
   }
 
   return (
@@ -52,7 +90,9 @@ export default function TopicFilter() {
               onChange={() => toggleTopic(topic)}
               className="w-4 h-4 rounded-full accent-[#5a9a5a] cursor-pointer"
             />
-            <label htmlFor={topic} className="text-gray-700 cursor-pointer">{topic}</label>
+            <label htmlFor={topic} className="text-gray-700 cursor-pointer">
+              {topic}
+            </label>
           </li>
         ))}
       </ul>
